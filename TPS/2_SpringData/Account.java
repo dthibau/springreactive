@@ -1,43 +1,28 @@
 package org.formation.model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Data
+@NoArgsConstructor
 public class Account {
 	
 	@Id
     private String id;
     private String owner;
-    private Double value;
+    private Double amount;
     
-	public Account(String id, String owner, Double value) {
-		super();
-		this.id = id;
-		this.owner = owner;
-		this.value = value;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getOwner() {
-		return owner;
-	}
-	public void setOwner(String owner) {
-		this.owner = owner;
-	}
-	public Double getValue() {
-		return value;
-	}
-	public void setValue(Double value) {
-		this.value = value;
-	}
+    public Account(String owner, Double amount) {
+        this.owner = owner;
+        this.amount = amount;
+    }
+    
 	@Override
 	public String toString() {
-		return "Account [id=" + id + ", owner=" + owner + ", value=" + value + "]";
+		return "Account [id=" + id + ", owner=" + owner + ", amount=" + amount + "]";
 	}
     
     

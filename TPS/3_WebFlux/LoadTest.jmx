@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.0 r1840935">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.3">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Imperative Test" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -10,7 +10,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="NB_USERS" elementType="Argument">
             <stringProp name="Argument.name">NB_USERS</stringProp>
-            <stringProp name="Argument.value">${__P(NB_USERS,800)}</stringProp>
+            <stringProp name="Argument.value">${__P(NB_USERS,300)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PAUSE" elementType="Argument">
@@ -34,6 +34,7 @@
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PAUSE" enabled="true">
